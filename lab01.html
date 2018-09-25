@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab01_canvas</title>
+</head>
+<body>
+	<canvas id='example' width="1005" height="150">Тег canvas не поддерживается в данном браузере!</canvas> 
+		<script>
+			var example = document.getElementById("example"),
+			ctx_1 = example.getContext('2d');
+			ctx_2 = example.getContext('2d');
+
+			// Устанавливаем начальные координаты для анимации
+			var x = 0;
+			var y_1 = 0;
+			var y_2 = 100;
+			var z = 100;
+
+			// Метод для повторения анимации
+			setInterval( function() {
+				if( x < z ) {
+					x += 2;
+					y_1 += 2;
+					y_2 -= 2;
+					ctx_1.fillStyle = 'MediumSlateBlue'; // Метод для изменения цвета
+					ctx_1.fillRect(x, y_1, 10, 10); // Метод для создания пикселя
+					ctx_2.fillStyle = 'DarkViolet';
+					ctx_2.fillRect(x, y_2, 10, 10);
+				} else {
+					if ( y_1 != 0 ) {
+						x += 2;
+						y_1 -= 2;
+						y_2 += 2;
+						ctx_2.fillStyle = 'DarkViolet';
+						ctx_2.fillRect(x, y_1, 10, 10);
+						ctx_1.fillStyle = 'MediumSlateBlue';
+						ctx_1.fillRect(x, y_2, 10, 10);
+					} else {
+						z += 100;
+					}
+				}
+			}, 5 );
+		</script>
+</body>
+</html>
