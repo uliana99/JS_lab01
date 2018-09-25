@@ -1,4 +1,4 @@
-[Play](https://cdn.rawgit.com/uliana99/JS_lab01/992b0a9b/lab01.html)
+[Play animation](https://cdn.rawgit.com/uliana99/JS_lab01/992b0a9b/lab01.html)
 
 ## Компьютерная графика
 
